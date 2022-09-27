@@ -186,4 +186,4 @@ DATA
     tzname = ('中国标准时间', '中国夏令时')
 
 FILE
-    d:\chay\project\多功能一体机（试用pypi）\all-in-one 1.4.0\src\allinone.py
+    D:\chay\project\多功能一体机\all-in-one\src\allinone.py
