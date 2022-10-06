@@ -189,3 +189,5 @@ DATA
 FILE
     d:\chay\project\多功能一体机（试用pypi）\all-in-one 1.4.0\src\allinone.py
 ```
+下载0.0.1-test版本
+https://github.com/lichenyichay/All-in-one1.4.0/releases/tag/v0.0.1-test
