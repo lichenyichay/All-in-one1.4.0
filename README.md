@@ -191,3 +191,5 @@ FILE
 ```
 下载0.0.1-test版本
 https://github.com/lichenyichay/All-in-one1.4.0/releases/tag/v0.0.1-test
+下载0.0.2-test版本
+https://github.com/lichenyichay/All-in-one1.4.0/releases/tag/v0.0.2-test
