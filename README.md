@@ -1,6 +1,6 @@
 # All-in-one1.4.2
 多功能一体机
-目前有1.4.2分支和安装包分支（installpackage）
+目前有1.4.2分支、2.4.0分支（正在紧急更新，最新）和安装包分支（installpackage）
 说明如下：
 ```python
 Help on module Allinone:
