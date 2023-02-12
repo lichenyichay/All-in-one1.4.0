@@ -4,7 +4,7 @@
 # @FILE:student_py.py
 # @Software:IDLE 3.9.6
 
-from menu import *
+
 import time
 '''
 函数名：student
@@ -19,29 +19,24 @@ def student():
         print("以下是现有学员名单：")
         for k in stu:
             print(k)
-        student_menu()
-        ans = input("请输入序号：")
-        if ans == "1":
+        ans = input("请输入功能：")
+        if ans == "查询学生信息":
             try:
                 a = input("请输入学员姓名：")
-                print(f"{a}的相关信息是：{stu[a]}")
-                time.sleep(1)
+                return f"{a}的相关信息是：{stu[a]}"
             except:
-                print("无此学生")
-                time.sleep(1)
-        elif ans == "2":
+                return "无此学生"
+        elif ans == "删除学生信息":
             a = input("请输入要删除的学员姓名：")
             del stu[a]
-            print(a,"的相关信息已经删除")
-            time.sleep(1)
-        elif ans == "3":
+            return f"{a}的相关信息已经删除"
+        elif ans == "添加学生信息":
             a = input("请输入要添加的学员姓名：")
             b = input("请输入新增的学员信息：")
             stu[a] = b
-            print(a,"的相关信息已添加")
-            time.sleep(1)
+            return (f"{a}的相关信息已添加")
         elif ans == "4":
             break
         else:
-            print("无此功能")
-            time.sleep(1)
+            return ("无此功能")
+    return 0
