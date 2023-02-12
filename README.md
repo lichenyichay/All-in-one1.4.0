@@ -1,4 +1,4 @@
-# All-in-one1.4.2
+# All-in-one2.4.0
 多功能一体机
 目前有1.4.2分支、2.4分支和安装包分支（installpackage）
 说明如下：
@@ -30,7 +30,7 @@ FILE
     d:\chay\project\多功能一体机\all-in-one\2.4\src\allinone.py
 
 ```
-下载0.0.1-test版本
+下载0.0.1-test版本（对应All-in-one1.4.0版本代码）
 https://github.com/lichenyichay/All-in-one1.4.0/releases/tag/v0.0.1-test
-下载0.0.2-test版本
+下载0.0.2-test版本（对应All-in-one1.4.2版本代码）
 https://github.com/lichenyichay/All-in-one1.4.0/releases/tag/v0.0.2-test
