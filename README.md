@@ -1,6 +1,6 @@
 # All-in-one1.4.2
 多功能一体机
-目前有1.4.2分支和安装包分支（installpackage）
+目前有1.4.2分支、2.4分支和安装包分支（installpackage）
 说明如下：
 ```python
 Help on module Allinone:
@@ -13,7 +13,7 @@ DESCRIPTION
     # @Author:Chay
     # @TIME:2022/9/24 8:36
     # @FILE:Allinone.py
-    # @version:1.4.2
+    # @version:2.4.0
     # @Software: IntelliJ IDEA
 
 FUNCTIONS
@@ -28,6 +28,7 @@ DATA
 
 FILE
     d:\chay\project\多功能一体机\all-in-one\2.4\src\allinone.py
+
 ```
 下载0.0.1-test版本
 https://github.com/lichenyichay/All-in-one1.4.0/releases/tag/v0.0.1-test
