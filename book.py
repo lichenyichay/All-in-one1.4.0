@@ -110,3 +110,118 @@ def startmenu():
     print("1、初始化（删除）")
     print("2、保留")
     return 0
+def book():
+    while True:
+        try:
+            try:
+                if os.path.exists("D:\\图书管理系统"):
+                    while True:
+                        os.system("cls")
+                        startmenu()
+                        a = input("请输入序号：")
+                        if a == "1":
+                            shutil.rmtree("D:\\图书管理系统")
+                            password = 0
+                            password = input("请设置管理员密码：")
+                            os.makedirs("D:\\图书管理系统")
+                            with open("D:\\图书管理系统\\password.txt","w") as file:
+                                file.write(password)
+                            break
+                        elif a == "2":
+                            with open("D:\\图书管理系统\\借书清单.csv") as f:
+                                f_csv = csv.reader(f)
+                                headers = next(f_csv)
+                                for row in f_csv:
+                                    jiebook[row[0]] = row[1]
+                            with open("D:\\图书管理系统\\图书清单.csv") as f:
+                                f_csv = csv.reader(f)
+                                headers = next(f_csv)
+                                for row in f_csv:
+                                    book[row[0]] = row[1]
+                            break
+                        else:
+                            print("序号错误！")
+            except Exception as e:
+                print(repr(e))
+            os.system("cls")
+            try:
+                with open("D:\\图书管理系统\\password.txt","r") as file:
+                    password = file.read()
+            except Exception:
+                password = input("请设置管理员密码：")
+                os.makedirs("D:\\图书管理系统")
+                with open("D:\\图书管理系统\\password.txt","w") as file:
+                    file.write(password)
+            while True:
+                os.system("cls")
+                book_menu()
+                xuhao = input("请输入序号：")
+                if xuhao == "1":
+                    try:
+                        while True:
+                            os.system("cls")
+                            yonghumenu()
+                            xuhao1 = input("请输入序号：")
+                            if xuhao1 == "1":
+                                a = input("请输入书本名称：")
+                                jieshu(a,1)
+                            elif xuhao1 == "2":
+                                a = input("请输入书本名称：")
+                                huanshu(a,1)
+                            elif xuhao1 == "3":
+                                a = input("请输入关键词：")
+                                bookquery(a)
+                            elif xuhao1 == "4":
+                                printjiebook()
+                            elif xuhao1 == "5":
+                                break
+                            else:
+                                print("序号不存在！")
+                    except Exception:
+                        pass
+                elif xuhao == "2":
+                    try:
+                        while True:
+                            os.system("cls")
+                            b = input("请输入管理员密码：")
+                            if b == password:
+                                os.system("cls")
+                                guanliyuanmenu()
+                                xuhao1 = input("请输入序号：")
+                                if xuhao1 == "1":
+                                    a = input("请输入书本名称：")
+                                    number = int(input("请输入本数："))
+                                    jiashu(a,number)
+                                elif xuhao1 == "2":
+                                    a = input("请输入书本名称：")
+                                    number = int(input("请输入本数："))
+                                    jianshu(a,number)
+                                elif xuhao1 == "3":
+                                    printbook()
+                                elif xuhao1 == "4":
+                                    a = input("请输入关键词：")
+                                    bookquery(a)
+                                elif xuhao1 == "5":
+                                    password = input("请设置新管理员密码：")
+                                    with open("D:\\图书管理系统\\password.txt","w") as file:
+                                        file.write(password)
+                                    print("修改成功！")
+                                    time.sleep(1)
+                                elif xuhao1 == "6":
+                                    break
+                                else:
+                                    print("序号不存在！")
+                            else:
+                                print("密码错误！")
+                                break
+                    except Exception:
+                        pass
+                elif xuhao == "3":
+                    jiebooksavetocsv("w")
+                    booksavetocsv("w")
+                    break
+                else:
+                    print("序号不存在！")
+            break
+        except:
+            pass
