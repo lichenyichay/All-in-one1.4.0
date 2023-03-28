@@ -1,7 +1,8 @@
 # All-in-one1.4.2
 多功能一体机
-目前有1.4.2分支
-说明如下：
+目前有1.4.2、2.4.0（更新中）分支
+1.4.2正式版本说明如下：
+```python
 Help on module Allinone:
 
 NAME
@@ -187,3 +188,4 @@ DATA
 
 FILE
     d:\chay\project\多功能一体机（试用pypi）\all-in-one 1.4.0\src\allinone.py
+```
