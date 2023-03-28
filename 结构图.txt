@@ -1,0 +1,48 @@
+All-in-one/
+├── License.txt
+├── pyproject.toml
+├── README.md
+├── 结构图.txt
+├── All-in-one 1.4.0.iml
+├── dist/
+│   └── All_in_one-1.4.2-py3-none-any.whl
+│   └── All-in-one-1.4.2.tar.gz
+├── src/
+│   └── module/
+│       └── __init__.py
+│       └── 二分查找.py
+│       └── 快速排列.py
+│       └── 学生管理系统.py
+│       └── __pycache__/
+│              └── __init__.cpython-310.pyc
+│              └── 二分查找.cpython-310.pyc
+│              └── 快速排列.cpython-310.pyc
+│              └── 学生管理系统.cpython-310.pyc
+│       └── 图形计算器/
+│              └── __init__.py
+│              └── 平面图形计算器.py
+│              └── 立体图形计算器.py
+│              └── __pycache__/
+│                 └── __init__.cpython-310.pyc
+│                 └── 立体图形计算器.cpython-310.pyc
+│                 └── 平面图形计算器.cpython-310.pyc
+│   └── All_in_one.egg-info/
+│       └── dependency_links.txt
+│       └── PKG-INFO
+│       └── SOURCES.txt
+│       └── top_level.txt
+│   └── __pycache__/
+│       └── __init__.cpython-310.pyc
+│       └── Allinone.cpython-310.pyc
+│   └── __init__.py
+│   └── Allinone.py
+├── bulid/
+│   └── bdist.win-amd64/
+├── .idea/
+│   └── .gitignore
+│   └── kotlic.xml
+│   └── misc.xml
+│   └── modules.xml
+│   └── workspace.xml
+│   └── inspectionProfiles
+│       └── Project_Default.xml
