@@ -110,7 +110,7 @@ def startmenu():
     print("1、初始化（删除）")
     print("2、保留")
     return 0
-def book():
+def book(*args3):
     while True:
         try:
             try:
@@ -154,13 +154,11 @@ def book():
                     file.write(password)
             while True:
                 os.system("cls")
-                book_menu()
                 xuhao = input("请输入序号：")
                 if xuhao == "1":
                     try:
                         while True:
                             os.system("cls")
-                            yonghumenu()
                             xuhao1 = input("请输入序号：")
                             if xuhao1 == "1":
                                 a = input("请输入书本名称：")
@@ -186,7 +184,6 @@ def book():
                             b = input("请输入管理员密码：")
                             if b == password:
                                 os.system("cls")
-                                guanliyuanmenu()
                                 xuhao1 = input("请输入序号：")
                                 if xuhao1 == "1":
                                     a = input("请输入书本名称：")

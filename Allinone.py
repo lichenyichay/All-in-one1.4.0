@@ -6,43 +6,48 @@
 # @Software: IntelliJ IDEA
 import os,math,time,random
 
-from module.book import *
-from module.calculator import *
-from module.erfenchazhao_py import *
-from module.math_cal_py import *
-from module.student_py import *
-from module.tuxing_cal import *
-from module.xiaogongju import *
+import module.book as book
+import module.calculator as calculator
+import module.erfenchazhao_py  as erfenchazhao_py
+import module.math_cal_py as math_cal
+import module.student_py as student_py
+import module.tuxing_cal as tuxing_cal
+import module.xiaogongju as xiaogongju
 
 def allinone(fuwu,mode,*args):
     """
-    :param 需要服务的功能
+    :param fuwu 需要服务的功能
+    :param mode 部分功能需要的模式，有：
+    :param *args 可变参数，表示需要传入的参数，建议用元组或列表类型，具体所需类型见README.MD
     :return: 0：正常，1：不正常，其他返回值表示功能的结果
+
     功能（按代码顺序排序，不分先后）：大小写互换、抽取随机数、求最小公倍数、求最大公倍数、图形计算器、小学学生信息管理系统、二分查找、求余、向下取整、向上取整、多个数求和、多个数求差、多个数求积、判断闰年、判断是否为质数、整数、小数计算（加减乘除）、分数计算（加减乘除）......（具体见Github All-in-one2.4.0分支Readme.md文件）
     """
-    global zongzifu
     try:
         i = -1
         i = i + 1
         if fuwu == "大小写互换":
+            zongzifu = []
             gongneng1 = mode
             if gongneng1 == "1":
                 for i in args:
                     zifu = i
                     zifu1 = chr(ord(zifu) + 32)
-                return("转换结果：",zifu1)
+                    zongzifu.append(zifu1)
+                return("转换结果：",zongzifu)
             elif gongneng1 == "2":
                 for i in args:
                     zifu = i
                     zifu1 = chr(ord(zifu) - 32)
-                return("转换结果：",zifu1)
+                    zongzifu.append(zifu1)
+                return("转换结果：",zongzifu)
         elif fuwu == "抽取随机数":
             c = args[0]
             d = args[1]
             while True:
                 try:
                     e = args[2]
-                    return randomint(d,c,e)
+                    return random.randomint(d,c,e)
                 except Exception as e:
                     return repr(e)
         elif fuwu == "求最小公倍数":
@@ -55,16 +60,16 @@ def allinone(fuwu,mode,*args):
         elif fuwu == "求最大公因数":
             num1 = args[0]
             num2 = args[1]
-            return twonumbers_TheBiggestCommonfactor(num1,num2)
+            return xiaogongju.twonumbers_TheBiggestCommonfactor(num1,num2)
         # elif fuwu == "快速排列":
         #     kuaisupailie()
         elif fuwu == "图形计算器":
             while True:
                 huida = args[0]
                 try:
-                    if tuxing(huida) != 1:
-                        if tuxing(huida) != 2:
-                            return tuxing(huida)
+                    if tuxing_cal.tuxing(huida) != 1:
+                        if tuxing_cal.tuxing(huida) != 2:
+                            return tuxing_cal.tuxing(huida)
                         else:
                             return "不支持此图形的计算！"
                     else:
@@ -73,7 +78,7 @@ def allinone(fuwu,mode,*args):
                     return ("输入无效！")
                     break
         elif fuwu == "小学学生信息管理系统":
-            student()
+            student_py.student()
         elif fuwu == "二分查找":
             while True:
                 d = input("请输入是否运行（运行输yes，否则输no）：")
@@ -81,7 +86,7 @@ def allinone(fuwu,mode,*args):
                     a = args
                     b = sorted(a)
                     c = args[-1]
-                    diaoyong = binarysearch(a, b, c)
+                    diaoyong  = erfenchazhao_py.erfenchazhao(a, b, c)
                     return(diaoyong)
                     sleep(5)
                 elif d == "no":
@@ -242,32 +247,33 @@ def allinone(fuwu,mode,*args):
             pass
         elif fuwu == "华氏度摄氏度转换":
             pass
-        elif fuwu == "混合运算-（+-）":
-            pass
-        elif fuwu == "混合运算-（+*）":
-            pass
-        elif fuwu == "混合运算-（+/）":
-            pass
-        elif fuwu == "混合运算-（-+）":
-            pass
-        elif fuwu == "混合运算-（-*）":
-            pass
-        elif fuwu == "混合运算-（-/）":
-            pass
-        elif fuwu == "混合运算-（*+）":
-            pass
-        elif fuwu == "混合运算-（*-）":
-            pass
-        elif fuwu == "混合运算-（*/）":
-            pass
-        elif fuwu == "混合运算-（/+）":
-            pass
-        elif fuwu == "混合运算-（/-）":
-            pass
-        elif fuwu == "混合运算-（/*）":
-            pass
-        elif fuwu == "混合运算-（//）":
-            pass
+        elif fuwu == "混合运算":
+            if mode == 1:
+                return args[0]+args[1]-args[2]
+            elif mode == 2:
+                return (args[0]+args[1])*args[2]
+            elif mode == 3:
+                return (args[0]+args[1])/args[2]
+            elif mode == 4:
+                return args[0]-args[1]+args[2]
+            elif mode == 5:
+                return (args[0]-args[1])*args[2]
+            elif mode == 6:
+                return (args[0]-args[1])/args[2]
+            elif mode == 7:
+                return args[0]*args[1]+args[2]
+            elif mode == 8:
+                return args[0]*args[1]-args[2]
+            elif mode == 9:
+                return args[0]*args[1]/args[2]
+            elif mode == 10:
+                return args[0]/args[1]+args[2]
+            elif mode == 11:
+                return args[0]/args[1]-args[2]
+            elif mode == 12:
+                return args[0]/args[1]*args[2]
+            elif mode == 13:
+                return args[0]/args[1]/args[2]
         elif fuwu == "货币转换-CNY（人民币）->USD（美元）":
             pass
         elif fuwu == "货币转换-CNY（人民币）->JPY（日元）":
@@ -353,4 +359,4 @@ def allinone(fuwu,mode,*args):
 
 import Allinone
 ##print(help(Allinone))
-print(allinone("大小写互换","2",("a")))
+print(allinone("大小写互换","2","a","b"))

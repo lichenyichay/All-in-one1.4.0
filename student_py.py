@@ -3,9 +3,6 @@
 # @TIME:2022/12/25 9:02
 # @FILE:student_py.py
 # @Software:IDLE 3.9.6
-
-
-import time
 '''
 函数名：student
 调用形式：student()
